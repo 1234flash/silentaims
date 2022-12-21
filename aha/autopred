@@ -1,0 +1,62 @@
+if getgenv().SilentSettings.AutoPrediction == true then
+    pingvalue = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
+    split = string.split(pingvalue,'(')
+    ping = tonumber(split[1])
+    if ping < 360 then
+        getgenv().DaHoodSettings.Prediction = 0.16537
+    elseif ping < 270 then
+        getgenv().DaHoodSettings.Prediction = 0.195566
+    elseif ping < 260 then
+        getgenv().DaHoodSettings.Prediction = 0.175566
+    elseif ping < 250 then
+        getgenv().DaHoodSettings.Prediction = 0.1651
+    elseif ping < 240 then
+        getgenv().DaHoodSettings.Prediction = 0.16780
+    elseif ping < 230 then
+        getgenv().DaHoodSettings.Prediction = 0.15692
+    elseif ping < 220 then
+        getgenv().DaHoodSettings.Prediction = 0.165566
+    elseif ping < 210 then
+        getgenv().DaHoodSettings.Prediction = 0.16780
+    elseif ping < 200 then
+        getgenv().DaHoodSettings.Prediction = 0.165566
+    elseif ping < 190 then
+        getgenv().DaHoodSettings.Prediction = 0.166547
+    elseif ping < 180 then
+        getgenv().DaHoodSettings.Prediction = 0.19284
+    elseif ping < 170 then
+        getgenv().DaHoodSettings.Prediction = 0.1923111 
+    elseif ping < 160 then
+        getgenv().DaHoodSettings.Prediction = 0.16
+    elseif ping < 150 then
+        getgenv().DaHoodSettings.Prediction = 0.15
+    elseif ping < 140 then
+        getgenv().DaHoodSettings.Prediction = 0.132
+    elseif ping < 130 then
+        getgenv().DaHoodSettings.Prediction = 0.132
+    elseif ping < 120 then
+        getgenv().DaHoodSettings.Prediction = 0.132
+    elseif ping < 110 then
+        getgenv().DaHoodSettings.Prediction = 0.132
+    elseif ping < 100 then
+        getgenv().DaHoodSettings.Prediction = 0.132
+    elseif ping < 90 then
+        getgenv().DaHoodSettings.Prediction = 0.132
+    elseif ping < 80 then
+        getgenv().DaHoodSettings.Prediction = 0.119
+    elseif ping < 70 then
+        getgenv().DaHoodSettings.Prediction = 0.119
+    elseif ping < 60 then
+        getgenv().DaHoodSettings.Prediction = 0.12731
+    elseif ping < 50 then
+        getgenv().DaHoodSettings.Prediction = 0.127668
+    elseif ping < 40 then
+        getgenv().DaHoodSettings.Prediction = 0.125
+    elseif ping < 30 then
+        getgenv().DaHoodSettings.Prediction = 0.11
+    elseif ping < 20 then
+        getgenv().DaHoodSettings.Prediction = 0.12588
+    elseif ping < 10 then
+        getgenv().DaHoodSettings.Prediction = 0.119
+    end
+end
