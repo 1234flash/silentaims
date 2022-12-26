@@ -73,52 +73,7 @@ circle.Thickness = 2
 circle.Color = Aiming.FOVColour
 circle.Filled = false
 Aiming.FOVCircle = circle
---//closet part
-mousePosVector2 = (function()
-    return Vector2.new(mouse.X, mouse.Y) 
-end)
-    function getClosestPlayerToCursor()
-        local closestPlayer
-        local shortestDistance = 137
 
-        for i, v in pairs(game.Players:GetPlayers()) do
-            if v ~= game.Players.LocalPlayer and v.Character and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health ~= 0 and v.Character:FindFirstChild("LowerTorso") then
-                local pos = CC:WorldToViewportPoint(v.Character.UpperTorso.Position)
-                local magnitude = (Vector2.new(pos.X, pos.Y) - Vector2.new(LocalMouse.X, LocalMouse.Y)).magnitude
-                if magnitude < shortestDistance then
-                    closestPlayer = v
-                    shortestDistance = magnitude
-                end
-            end
-        end
-        return closestPlayer
-    end
-
-    getClosestBodyPart = (function()
-        local shortestDistance = math.huge
-        local bodyPart = nil
-        
-        for _, v in next, game.Players:GetPlayers() do
-            if (v ~= lp and v.Character and v.Character:FindFirstChild("Humanoid")) then
-                for k, x in next, v.Character:GetChildren() do
-                    if (Filter(x)) then
-                        local Distance = (WTS(x) - mousePosVector2()).magnitude
-                        if (Distance < shortestDistance) then
-                            shortestDistance = Distance
-                            bodyPart = x
-                        end
-                    end
-                end
-            end
-        end
-        
-        return bodyPart
-    end)
-
-
-
-    
-    
 -- // Update
 function Aiming.UpdateFOV()
     -- // Make sure the circle exists
@@ -483,7 +438,3 @@ end)
 return Aiming
 
 
-
-while wait() do
-        getgenv().Aiming.TargetPart = tostring(getClosestBodyPart())
-end
